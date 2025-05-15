@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:bodyandbeauty/common/widgets/Image/circular_image.dart';
 import 'package:bodyandbeauty/common/widgets/texts/brand_title_with_verfied_icon.dart';
 import 'package:bodyandbeauty/common/widgets/texts/product_price_text.dart';

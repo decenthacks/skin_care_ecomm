@@ -1,5 +1,4 @@
 import 'package:bodyandbeauty/common/widgets/appBar/appbar.dart';
-import 'package:bodyandbeauty/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:bodyandbeauty/features/personalization/screens/address/add_new_address.dart';
 import 'package:bodyandbeauty/features/personalization/screens/address/widgets/single_address.dart';
 import 'package:bodyandbeauty/utils/constants/colors.dart';

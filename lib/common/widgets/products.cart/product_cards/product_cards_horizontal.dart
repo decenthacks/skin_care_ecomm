@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:bodyandbeauty/common/widgets/Image/rounded_image.dart';
 import 'package:bodyandbeauty/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:bodyandbeauty/common/widgets/texts/brand_title_with_verfied_icon.dart';
@@ -10,7 +12,6 @@ import 'package:iconsax/iconsax.dart';
 import '../../../../utils/constants/colors.dart';
 import '../../../../utils/constants/sizes.dart';
 import '../../../../utils/helpers/helper_functions.dart';
-import '../../../styles/shadows.dart';
 import '../../icons/my_circular_icon.dart';
 
 class ProductCardsHorizontal extends StatelessWidget {

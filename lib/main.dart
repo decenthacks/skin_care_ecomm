@@ -1,60 +1,39 @@
-import 'package:amplify_flutter/amplify_flutter.dart';
-import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
+
+
 import 'package:bodyandbeauty/data/repositories/authentication_repository.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:get_storage/get_storage.dart';
-
-
+import 'firebase_options.dart';
 import 'app.dart';
 
 /// Entry point to the Flutter app
 Future<void> main() async {
-  // Ensure Widgets binding is initialized
+
+
   final WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
-  /// Initialize GetX local storage
   await GetStorage.init();
 
-  /// Preserve splash screen until Amplify & authentication setup is complete
+  // Await Splash until other item load
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
-  /// Initialize AWS Amplify before authentication repository
-  await _configureAmplify();
 
-  /// Inject Authentication Repository using GetX
-  Get.put(AuthenticationRepository());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform).then(
+          (FirebaseApp value) => Get.put(AuthenticationRepository()),
+    );
 
-  /// Remove splash screen after initialization
-  FlutterNativeSplash.remove();
+
 
   /// Run the app
   runApp(const App());
 }
 
-/// Configure AWS Amplify
-Future<void> _configureAmplify() async {
-  try {
-    final auth = AmplifyAuthCognito();
-    await Amplify.addPlugin(auth);
-    await Amplify.configure(amplifyconfig);
-    if (kDebugMode) {
-      print("✅ AWS Amplify configured successfully!");
-    }
-  } on Exception catch (e) {
-    if (kDebugMode) {
-      print("❌ Error configuring Amplify: $e");
-    }
-    Get.snackbar(
-      "Amplify Error",
-      "Failed to initialize Amplify. Please try again.",
-      backgroundColor: Colors.red,
-      colorText: Colors.white,
-    );
-  }
-}
+
 
 
 // import 'package:bodyandbeauty/data/repositories/authentication_repository.dart';

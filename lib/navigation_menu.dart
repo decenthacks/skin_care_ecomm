@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:bodyandbeauty/features/personalization/screens/settings/settings.dart';
 import 'package:bodyandbeauty/features/shop/screens/WishList/wishlist.dart';
 import 'package:bodyandbeauty/features/shop/screens/home/widgets/home.dart';

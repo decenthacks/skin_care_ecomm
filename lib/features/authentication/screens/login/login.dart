@@ -1,7 +1,6 @@
 import 'package:bodyandbeauty/common/styles/spacing_styles.dart';
 import 'package:bodyandbeauty/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:bodyandbeauty/features/authentication/screens/login/widgets/login_header.dart';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,8 +14,6 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -38,7 +35,7 @@ class LoginScreen extends StatelessWidget {
                       const MyLoginForm(),
 
                       /// Divider
-                      MyFormDivider( dividerText: MyTexts.orSignInWith.capitalize!, ),
+                      MyFormDivider(dividerText: MyTexts.orSignInWith.capitalize!),
 
                       const SizedBox(height: MSizes.spaceBtwSections),
 

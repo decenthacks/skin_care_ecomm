@@ -1,9 +1,6 @@
 import 'package:bodyandbeauty/common/widgets/appBar/appbar.dart';
-import 'package:bodyandbeauty/common/widgets/layouts/grid_layout.dart';
-import 'package:bodyandbeauty/common/widgets/products.cart/product_cards/product_cards_vertical.dart';
 import 'package:bodyandbeauty/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../../common/widgets/products.cart/sortable/sortable_products.dart';
 
@@ -14,7 +11,7 @@ class AllProducts extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppbar(
-        title: const Text('Popular Products'),
+        title: Text('Popular Products'),
         showBackArrow: true,
       ),
       body: SingleChildScrollView(

@@ -1,15 +1,9 @@
 import 'package:bodyandbeauty/common/widgets/appBar/appbar.dart';
-import 'package:bodyandbeauty/features/shop/screens/Product_review/widgets/progress_indicator_and_rating.dart';
 import 'package:bodyandbeauty/common/widgets/products.cart/ratings/rating_bar_indicator.dart';
 import 'package:bodyandbeauty/features/shop/screens/Product_review/widgets/rating_program_indicator.dart';
 import 'package:bodyandbeauty/features/shop/screens/Product_review/widgets/user_review_card.dart';
-import 'package:bodyandbeauty/utils/constants/colors.dart';
 import 'package:bodyandbeauty/utils/constants/sizes.dart';
-import 'package:bodyandbeauty/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:iconsax/iconsax.dart';
 
 class ProductReviewsScreen extends StatelessWidget {
   const ProductReviewsScreen({super.key});

@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'exceptions.dart';
 
 class PlatformExceptionHandler extends AppException {
-  PlatformExceptionHandler(String message) : super(message);
+  PlatformExceptionHandler(super.message);
 
   /// Handles platform-specific exceptions (e.g., Android/iOS)
   static String handle(PlatformException e) {

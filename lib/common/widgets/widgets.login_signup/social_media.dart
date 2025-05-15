@@ -1,4 +1,6 @@
+import 'package:bodyandbeauty/features/authentication/controllers/signin/signin_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/image_strings.dart';
@@ -13,12 +15,13 @@ class MySocialMediaButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
           decoration: BoxDecoration(border: Border.all(color: MyColors.grey),borderRadius: BorderRadius.circular(100)),
-          child: IconButton(onPressed: () {} ,
+          child: IconButton(onPressed: () => controller.googleSignIn() ,
               icon: const Image(
                 width: MSizes.iconMd,
                 height: MSizes.iconMd,

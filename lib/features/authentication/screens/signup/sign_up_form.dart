@@ -114,7 +114,7 @@ class MySignUpForm extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: dark ? MyColors.light : MyColors.dark,
               ),
-              onPressed: () => controller.verifyEmail,
+              onPressed: () => controller.signup(),
               child: Text(
                 MyTexts.createAccount,
                 style: Theme.of(context).textTheme.bodyMedium,

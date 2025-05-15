@@ -1,120 +1,56 @@
 import 'package:bodyandbeauty/data/repositories/authentication_repository.dart';
-import 'package:bodyandbeauty/features/authentication/screens/login/login.dart';
-import 'package:bodyandbeauty/utils/constants/colors.dart';
-import 'package:bodyandbeauty/utils/constants/text_strings.dart';
+import 'package:bodyandbeauty/features/authentication/controllers/signup/verify_email_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../common/widgets/success_screen/success_screen.dart';
-import '../../../../utils/helpers/helper_functions.dart';
+
 import '../../../../utils/constants/image_strings.dart';
 import '../../../../utils/constants/sizes.dart';
-import '../../controllers/signup/signup_controller.dart';
+import '../../../../utils/constants/text_strings.dart';
+import '../../../../utils/helpers/helper_functions.dart';
 
-class VerifyEmailsScreen extends StatelessWidget {
-  final String userEmail;
-  final TextEditingController codeController = TextEditingController();
-  final  controller = Get.put(SignupController());
 
-  VerifyEmailsScreen({super.key, required this.userEmail});
 
+class VerifyEmailScreen extends StatelessWidget {
+  const VerifyEmailScreen({super.key, this.email});
+   final String? email;
   @override
   Widget build(BuildContext context) {
-    final dark = MyHelperFunctions.isDarkMode(context);
+
+    final controller = Get.put(VerifyEmailController());
+
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         actions: [
-          IconButton( onPressed: () => AuthenticationRepository.instance.logout(),
-            icon: const Icon(CupertinoIcons.clear),
-          )
-        ],
+          IconButton(onPressed: () => AuthenticationRepository.instance.logout(),icon: const Icon (CupertinoIcons.clear))],
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(), // Enables smooth scrolling
-          child: Padding(
-            padding: const EdgeInsets.all(MSizes.defaultSpace),
-            child: Column(
-              mainAxisSize: MainAxisSize.min, // Prevents infinite height issue
+      body: SingleChildScrollView(
+            // Padding to Give Default Equal Space on all sides in all screens.
+        child: Padding(
+          padding: const EdgeInsets.all(MSizes.defaultSpace),
+          child: Column(
               children: [
-                /// **Email Illustration**
-                SizedBox(
-                  height: 200, // ✅ Fixed image size to avoid overflow
-                  child: Image(
-                    image: const AssetImage(MyImages.OnboardinImage1),
-                    width: MyHelperFunctions.screenWidth() * 0.6,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                const SizedBox(height: MSizes.spaceBtwSections),
+          /// Image
+          Image(
+          image: const AssetImage(MyImages.deliveredEmailIllustration),
+          width: MyHelperFunctions.screenWidth() * 0.6,
+        ), // Image
+        const SizedBox(height: MSizes.spaceBtwSections),
 
-                /// **Title & SubTitle**
-                Text(
-                  MyTexts.confirmEmail,
-                  style: Theme.of(context).textTheme.headlineMedium,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: MSizes.spaceBtwItems),
-                Text(
-                  userEmail,
-                  style: Theme.of(context).textTheme.labelLarge,
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  MyTexts.confirmEmailSubTitle,
-                  style: Theme.of(context).textTheme.labelMedium,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: MSizes.spaceBtwSections),
+        /// Title & SubTitle
+        Text(MyTexts.confirmEmail, style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center),
+        const SizedBox(height: MSizes.spaceBtwItems),
+        Text(email ?? '', style: Theme.of(context).textTheme.labelLarge, textAlign: TextAlign.center),
 
-                /// **Input Field for Verification Code**
-                TextField(
-                  controller: codeController,
-                  keyboardType: TextInputType.number,
-                  decoration: const InputDecoration(
-                    labelText: "Enter Verification Code",
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                const SizedBox(height: MSizes.spaceBtwItems),
-
-                /// **Confirm Button**
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: dark ? MyColors.dark : MyColors.light,
-                    ),
-                    onPressed: () {
-                      if (codeController.text.isEmpty) {
-                        Get.snackbar("Error", "Please enter the verification code.");
-                      } else {
-                        controller.verifyEmail(userEmail, codeController.text);
-                      }
-                    },
-                    child: Text(
-                      MyTexts.MyContinue,
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: MSizes.spaceBtwItems),
-
-                /// **Resend Email**
-                SizedBox(
-                  width: double.infinity,
-                  child: TextButton(
-                    onPressed: () {
-                      // TODO: Implement resend verification code logic
-                    },
-                    child: const Text(MyTexts.resendEmail),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+        /// Buttons
+          SizedBox(width: double.infinity, child: ElevatedButton (onPressed: () => controller.checkEmailVerificationStatus(), child: const Text (MyTexts.MyContinue))),
+          const SizedBox(height: MSizes.spaceBtwItems),
+          SizedBox(width: double.infinity, child: TextButton(onPressed: () => controller.sendEmailVerification(), child: const Text (MyTexts.resendEmail)),
+          )],
       ),
+    ),
+    ),
     );
   }
 }

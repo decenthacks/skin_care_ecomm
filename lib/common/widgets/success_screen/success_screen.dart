@@ -1,9 +1,9 @@
 import 'package:bodyandbeauty/common/styles/spacing_styles.dart';
 import 'package:bodyandbeauty/utils/constants/colors.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/sizes.dart';
-import '../../../utils/constants/text_strings.dart';
 import '../../../utils/helpers/helper_functions.dart';
 
 class SuccessScreen extends StatelessWidget {
@@ -65,4 +65,6 @@ class SuccessScreen extends StatelessWidget {
       ),
     );
   }
+
+
 }

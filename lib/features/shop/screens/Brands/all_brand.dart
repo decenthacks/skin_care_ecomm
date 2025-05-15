@@ -1,7 +1,6 @@
 import 'package:bodyandbeauty/common/widgets/Brand%20Cards/brand_cards.dart';
 import 'package:bodyandbeauty/common/widgets/appBar/appbar.dart';
 import 'package:bodyandbeauty/common/widgets/layouts/grid_layout.dart';
-import 'package:bodyandbeauty/common/widgets/products.cart/sortable/sortable_products.dart';
 import 'package:bodyandbeauty/common/widgets/texts/Section_heading.dart';
 import 'package:bodyandbeauty/features/shop/screens/Brands/brand.dart';
 import 'package:bodyandbeauty/utils/constants/sizes.dart';

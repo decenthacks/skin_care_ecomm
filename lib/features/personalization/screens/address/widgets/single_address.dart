@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:bodyandbeauty/utils/constants/colors.dart';
 import 'package:bodyandbeauty/utils/constants/sizes.dart';
 import 'package:bodyandbeauty/utils/helpers/helper_functions.dart';

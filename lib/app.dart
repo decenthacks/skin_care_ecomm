@@ -1,5 +1,4 @@
 import 'package:bodyandbeauty/bindings/general_binding.dart';
-import 'package:bodyandbeauty/features/authentication/screens/Onboarding/onboarding.dart';
 import 'package:bodyandbeauty/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:bodyandbeauty/utils/theme/theme.dart';

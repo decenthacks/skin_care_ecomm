@@ -2,10 +2,10 @@ import 'package:bodyandbeauty/common/widgets/appBar/appbar.dart';
 import 'package:bodyandbeauty/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:bodyandbeauty/common/widgets/list%20tile/settings_menu_tile.dart';
 import 'package:bodyandbeauty/common/widgets/texts/Section_heading.dart';
+import 'package:bodyandbeauty/features/authentication/screens/login/login.dart';
 import 'package:bodyandbeauty/features/personalization/screens/address/Address.dart';
 import 'package:bodyandbeauty/features/personalization/screens/profile/profile.dart';
 import 'package:bodyandbeauty/features/shop/screens/order/order.dart';
-import 'package:bodyandbeauty/features/shop/screens/order/widgets/order_list.dart';
 import 'package:bodyandbeauty/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -126,7 +126,7 @@ class SettingsScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton(
-                        onPressed: () {}, child: const Text('Logout')),
+                        onPressed: () => Get.to(() => LoginScreen()), child: const Text('Logout')),
                   ),
                   const SizedBox(height: MSizes.spaceBtwSections * 2.5)
                   // TSettingsMenuTile

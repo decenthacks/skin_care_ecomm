@@ -1,3 +1,5 @@
+import 'package:bodyandbeauty/loader/shimmer_loader.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
@@ -34,12 +36,20 @@ class MyCircularImage extends StatelessWidget {
         borderRadius: BorderRadius.circular (100),
       ), // BoxDecoration
       child: Center(
-        child: Image(
+        child: isNetworkImage
+        ? CachedNetworkImage(
           fit: fit,
-          image: isNetworkImage? NetworkImage(image): AssetImage(image) as ImageProvider,
           color: overlayColor,
-        ), // Image
-      ), // Center
-    ); // Container
+          imageUrl: image,
+          progressIndicatorBuilder: (context, url, downloadProgress) => const MyShimmerEffect(width: 55, height: 55),
+          errorWidget: (context, url, error) => const Icon (Icons.error)
+        )
+         : Image(
+          fit: fit,
+          image: AssetImage(image),
+          color: overlayColor,
+        ),
+      ),
+    );
   }
 }

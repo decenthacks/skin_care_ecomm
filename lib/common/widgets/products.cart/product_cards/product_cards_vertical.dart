@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:bodyandbeauty/common/styles/shadows.dart';
 import 'package:bodyandbeauty/common/widgets/Image/rounded_image.dart';
 import 'package:bodyandbeauty/common/widgets/custom_shapes/containers/rounded_container.dart';
@@ -10,7 +12,6 @@ import 'package:bodyandbeauty/utils/constants/sizes.dart';
 import 'package:bodyandbeauty/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../icons/my_circular_icon.dart';

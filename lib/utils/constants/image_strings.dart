@@ -14,6 +14,10 @@ class MyImages {
   static const String OnboardinImage3 = "assets/images/onboarding_images/delivery.gif";
 
 
+  static const String successfullyRegisterAnimation = "assets/images/onboarding_images/delivery.gif";
+  static const String docerAnimation = "assets/images/onboarding_images/delivery.gif";
+
+
   // Animations
   static const String productsIllustration = "assets/images/animations/sammy-line-workout.gif";
   static const String productsSaleIllustration = "assets/images/animations/sammy-line-sale.png";
@@ -23,7 +27,7 @@ class MyImages {
   static const String verifyIllustration = "assets/images/animations/sammy-line-travel-backpack-with-passport-and-air-ticket.gif";
 
   //-- Category Icons
-  static const String sportIcon = "assets/icons/categories/icons8-bowling-64.png";
+  static const String sportIcon = "assets/images/google.png";
   static const String clothIcon = "assets/icons/categories/icons8-tailors-dummy-64.png";
   static const String shoeIcon = "assets/icons/categories/icons8-shoes-64.png";
   static const String cosmeticsIcon = "assets/icons/categories/icons8-cosmetics-64.png";
@@ -42,7 +46,7 @@ class MyImages {
   static const String user = "assets/images/products/nike-shoes.png";
 
   ///Products
-  static const String productImage1 = "assets/images/products/nike-shoes.png";
+  static const String productImage1 = "assets/images/google.png";
   static const String productImage2 = "assets/images/products/product-1.png";
   static const String productImage3 = "assets/images/products/product-jacket.png";
   static const String productImage4 = "assets/images/products/product-jeans.png";
@@ -76,7 +80,7 @@ class MyImages {
   static const String productImage32 = "assets/images/products/bedroom_bed.png";
   static const String productImage33 = "assets/images/products/bedroom_lamp.png";
 
-  static const String decerAnimation = "assets/images/products/bedroom_lamp.png";
+  static const String decerAnimation = "assets/animations/loaderAnime.png";
 
 
 
